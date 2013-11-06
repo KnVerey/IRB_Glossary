@@ -17,4 +17,4 @@ def populate(glossary_id)
 end
 
 @glossary = Glossary.create(description: 'IRB Glossary', source: 'http://www.irb-cisr.gc.ca/Eng/BoaCom/pubs/Pages/GloLexAk.aspx' )
-populate(@glossary.id,)
+populate(@glossary.id)

@@ -1,6 +1,20 @@
+<script> 
+	function show(id) { 
+		document.getElementById(id).style.display = 'block'; 
+	}
+
+	function hideAll() { 
+		var items = document.getElementsByClassName("term-list");
+		for (var i in items) { 
+			if (items[i].id != null) items[i].style.display = 'none';
+		}
+	}
+
+</script> 
+
 <header class="h-full container darkest-bg">
-	<h3 class="left accent"><%= @glossary.description %>: <%= @l1.capitalize %> <button>↔</button> <%= @l2.capitalize %></h3>
-	<form action="search_results.html" class="right vcenter">
+	<h3 class="left accent"><%= @glossary.description %>: <%= @l1.capitalize %> <%= link_to button_tag(" ↔ "), "/glossaries/1?l1=#{@l2}" %> <%= @l2.capitalize %></h3>
+	<form action="/search" class="right vcenter">
 		<input type="search" id="GET-search" name="search_field" placeholder="Find a term" autofocus="true" size="35px" autocomplete="off">
 		<input type="submit" value="GO">
 	</form>
@@ -8,23 +22,7 @@
 
 <main class="h-full container med-bg">
 
-	<p><%= @term_records.to_a %><p>
-
-	<% all_char1s = @term_records.map do |record| %> 
-		<% if @l1 == "english" %>
-			<% source_term = record.english %>
-			<% translation = record.french %>
-		<% elsif @l1 == "french" %> 
-			<% source_term = record.french; %>
-			<% translation = record.english %>
-		<% end %>
-
-		<% term_char1 = source_term[0] #.remove_accents %>
-		<% %w[1 2 3 4 5 6 7 8 9 0].include?(term_char1) ? "#" : term_char1.upcase %>
-	<% end %>
-	<% chapter_list = all_char1s.uniq.sort %>
-
-	<% chapter_list.each do |letter| %>
+	<% @chapter_list.each do |letter| %>
 			<section id="<%= letter %>" class="term-list">
 				<h3> <%= letter %> </h3>
 				<ol class="terms">
@@ -54,7 +52,7 @@
 		<% end %>
 
 	<nav class="chapter-nav med-bg">
-	  <% chapter_list.each do |letter| %>
+	  <% @chapter_list.each do |letter| %>
 	  	<a href="#<%= letter %>" onclick="hideAll(); show('<%= letter %>');"><%= letter %></a>
 	  <% end %>
 	</nav>

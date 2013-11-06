@@ -1,0 +1,3 @@
+ ☐ Make first set appear on load
+ ☐ add helper method to take off accents
+ ☐ extract more logic from show.html.erb
