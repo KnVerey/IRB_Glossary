@@ -6,6 +6,9 @@ class GlossariesController < ApplicationController
 
 	def show
 		@glossary = Glossary.find(params[:id])
+		@term_records = TermRecord.all
+		@l1 = "english"
+		@l2 = "french"
 	end
 
 end

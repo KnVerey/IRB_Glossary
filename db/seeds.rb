@@ -11,19 +11,10 @@ require 'csv'
 def populate(glossary_id)
 	csv_data = CSV.read("irb_glossary.csv")
 
-	if glossary_id==2 
-	 	source_lang_term = 1; trans_term = 0
-	else
-		source_lang_term = 0; trans_term = 1
+	csv_data.each do |line| 
+		TermRecord.create( english: line[0], french: line[1], glossary_id: glossary_id )
 	end
-
-		csv_data.each do |line| 
-			@term_record = TermRecord.create( source_term: line[source_lang_term], translation: line[trans_term], glossary_id: glossary_id )
-		end
 end
 
-@glossary = Glossary.create(description: 'IRB Glossary: English to French', source: 'http://www.irb-cisr.gc.ca/Eng/BoaCom/pubs/Pages/GloLexAk.aspx' )
-populate(1)
-
-@glossary = Glossary.create(description: 'IRB Glossary: French to English', source: 'http://www.irb-cisr.gc.ca/Fra/BoaCom/pubs/Pages/GloLexAk.aspx' )
-populate(2)
+@glossary = Glossary.create(description: 'IRB Glossary', source: 'http://www.irb-cisr.gc.ca/Eng/BoaCom/pubs/Pages/GloLexAk.aspx' )
+populate(@glossary.id,)

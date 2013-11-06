@@ -1,7 +1,8 @@
-<main class="welcome dark-bg">
-	<h1>Please select a glossary</h1>
+<section class="popup dark-bg">
+	<h1>IRB Glosssary</h1>
+	<h3>Which direction would you like to view?</h3>
+	
+	<%= link_to button_tag("English→French"), "/glossaries/1" %>
+	<%= link_to button_tag("French→English"), "/glossaries/1" %>
 
-	<% @glossaries.each do |glossary| %>
-		<%= link_to button_tag(glossary.description), "/glossaries/#{glossary.id}" %>
-	<% end %>
-</main>
+</section>
