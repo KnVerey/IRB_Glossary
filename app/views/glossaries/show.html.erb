@@ -13,11 +13,11 @@
 </script> 
 
 <header class="h-full container darkest-bg">
-	<h3 class="left accent"><%= @glossary.description %>: <%= @l1.capitalize %> <%= link_to button_tag(" ↔ "), "/glossaries/1?l1=#{@l2}" %> <%= @l2.capitalize %></h3>
-	<form action="/search" class="right vcenter">
-		<input type="search" id="GET-search" name="search_field" placeholder="Find a term" autofocus="true" size="35px" autocomplete="off">
-		<input type="submit" value="GO">
-	</form>
+	<h3 class="left accent"><%= @glossary.description %>: <%= @l1.capitalize %> <%= link_to button_tag(" ↔ "), "/glossaries/1?l1=#{@l2.capitalize}" %> <%= @l2.capitalize %></h3>
+	<%= form_tag('/search', method: :put) do %>
+		<%= search_field_tag "search", nil, placeholder: "Enter an #{@l1} search term" %>
+		<%= submit_tag "GO" %>
+	<% end %>
 </header>
 
 <main class="h-full container med-bg">
@@ -42,7 +42,7 @@
 								<li class="source-term"><%= source_term %></li>
 								<li class="translation"><%= translation %></li>
 							<% end %>
-						<% elsif term_char1.upcase == letter.upcase #.remove_accents ON BOTH %>
+						<% elsif term_char1.upcase == letter.upcase #remove accents on both here %> 
 							<li class="source-term"><%= source_term %></li>
 							<li class="translation"><%= translation %></li>
 						<% end %>

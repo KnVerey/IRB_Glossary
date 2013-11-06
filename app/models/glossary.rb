@@ -19,4 +19,8 @@ class Glossary < ActiveRecord::Base
 		all_char1s.uniq.sort
 	end
 
+	# def remove_accents
+	# 	self.tr('ÀàÂâÄäÉéÈèÊêËëÎîÏïÔôÖöÛûÜüÙùÇç','aaaaaaeeeeeeeeiiiioooouuuuuucc')
+	# end
+
 end

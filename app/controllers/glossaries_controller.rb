@@ -10,7 +10,10 @@ class GlossariesController < ApplicationController
 		@l1 = params[:l1]
 		@l1 == "french" ? @l2 = "english" : @l2 = "french"
 		@chapter_list = @glossary.chapter_list(@l1)
+	end
 
+	def search
+		
 	end
 
 end

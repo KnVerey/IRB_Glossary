@@ -3,6 +3,9 @@ IRBGlossary::Application.routes.draw do
   root to:  "glossaries#index"
   resources :glossaries, only: [:index, :show]
 
+
+  get 'search' => 'glossaries#search'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

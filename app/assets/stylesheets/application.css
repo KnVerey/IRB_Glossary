@@ -34,9 +34,21 @@
 .right { 	float:right;	}
 .left {		float:left;		}
 
-.vcenter {
-	position: relative;
-	top:1em;
+form {
+	float:right;
+}
+
+header {
+	min-height: 3em;
+	z-index: 100;
+	position: fixed;
+	padding: 1em 1em 1em 0;
+	box-sizing:border-box;
+}
+
+header h3 {
+	margin:0;
+	padding: 0;
 }
 
 .h-full {
@@ -140,6 +152,7 @@ input[type="submit"]:active, input[type="submit"]:focus, input[type="submit"]:ho
 
 input[type="search"] {
 	border-radius: 3px;
+	width: 20em;
 }
 
 input[type="search"]:focus {
