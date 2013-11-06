@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  english: MyString
-  french: MyString
+  source_term: 
+  translation: MyString
 
 two:
-  english: MyString
-  french: MyString
+  source_term: 
+  translation: MyString

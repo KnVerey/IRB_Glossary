@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TermRecordsControllerTest < ActionController::TestCase
+class GlossaryTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

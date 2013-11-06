@@ -11,13 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131106014827) do
+ActiveRecord::Schema.define(version: 20131105211227) do
 
-  create_table "term_records", force: true do |t|
-    t.string   "english"
-    t.string   "french"
+  create_table "glossaries", force: true do |t|
+    t.string   "description"
+    t.string   "source"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "term_records", force: true do |t|
+    t.string   "source_term"
+    t.string   "translation"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "glossary_id"
   end
 
 end
