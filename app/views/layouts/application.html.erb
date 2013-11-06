@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html class="v-100p light-bg">
+<head>
+  <title>IRBGlossary</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+</head>
+<body class="h-full v-100p">
+
+	<div class="abs_left styling-bar"></div>
+	<div class="abs_right styling-bar"></div>
+
+	<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+<main class="welcome dark-bg">
+	<h1>Please select a glossary</h1>
+
+	<% @glossaries.each do |glossary| %>
+		<%= link_to button_tag(glossary.description), "/glossaries/#{glossary.id}" %>
+	<% end %>
+</main>
