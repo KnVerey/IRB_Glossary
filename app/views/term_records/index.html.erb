@@ -1,5 +1,5 @@
 <header class="h-full container darkest-bg">
-  <h3 class="left accent">IRB Glossary</h3>
+  <h3 class="left accent">IRB Glossary: <%= @l1 %> <%= link_to button_tag("glyphicons_117_embed.png"), term_records_path %> <%= @l2 %></h3>
   <form action="search_results.html" class="right vcenter">
           <input type="search" id="GET-search" name="search_field" placeholder="Find a term" autofocus="true" size="35px" autocomplete="off">
           <input type="submit" value="GO">
@@ -9,8 +9,8 @@
 <div class="popup container">
   <h1>IRB Glossary</h1>
   <h3>Which direction would you like to consult?</h3>
-  <%= link_to button_tag("EN→FR"), "/term_records/en" %>
-  <%= link_to button_tag("FR→EN"), "/term_records/fr" %>
+  <%= link_to button_tag("EN→FR"), term_records_path, index_lang: "english" %>
+  <%= link_to button_tag("FR→EN"), term_records_path, index_lang: "french" %>
 </div>
 <div class="mask v-100p h-full"></div>
 

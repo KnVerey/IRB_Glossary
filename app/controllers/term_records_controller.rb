@@ -1,11 +1,7 @@
 class TermRecordsController < ApplicationController
 
 	def index
+		@index_lang = params[:index_lang]
 	end
 
-	def show
-		@term_records = TermRecord.all
-		@l1 = "English"
-		@l2 = "French"
-	end
 end
