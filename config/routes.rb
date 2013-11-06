@@ -1,7 +1,7 @@
 IRBGlossary::Application.routes.draw do
 
-  root to:  "glossaries#index"
-  resources :glossaries
+  root to:  "term_records#index"
+  resources :term_records
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

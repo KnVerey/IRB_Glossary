@@ -1,8 +1,8 @@
 class CreateTermRecords < ActiveRecord::Migration
   def change
     create_table :term_records do |t|
-      t.string :source_term
-      t.string :translation
+      t.string :english
+      t.string :french
 
       t.timestamps
     end
