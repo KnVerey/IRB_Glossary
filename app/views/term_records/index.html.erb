@@ -6,22 +6,13 @@
   </form>
 </header>
 
-<main class="h-full container med-bg">
-  <ul>
-  	<% @term_records.each do |record| %>
-			<% term_char1 = record.source_lang_term[0] %>
-				<% if letter == "#" %>
-					<% if %w[1 2 3 4 5 6 7 8 9 0].include?(term_char1) %>
-						<li class="source-term"><%= record.source_lang_term %></li>
-						<li class="translation"><%= record.translation %></li>
-					<% end %>
-				<% elsif term_char1.remove_accents.upcase == letter.remove_accents.upcase %>
-					<li class="source-term"><%= record.source_lang_term %></li>
-					<li class="translation"><%= record.translation %></li>
-				<% end %>
-  	<% end %>
-  </ul>
-</main>
+<div class="popup container">
+  <h1>IRB Glossary</h1>
+  <h3>Which direction would you like to consult?</h3>
+  <%= link_to button_tag("EN→FR"), "/glossaries/en" %>
+  <%= link_to button_tag("FR→EN"), "/glossaries/fr" %>
+</div>
+<div class="mask v-100p h-full"></div>
 
 <footer class="darkest-bg h-full">
         <p>Information reproduced from <a href="http://www.irb-cisr.gc.ca" >www.irb-cisr.gc.ca</a> for non-commercial purposes in accordance with that site's <a href="http://www.irb-cisr.gc.ca/Eng/notavi/Pages/index.aspx">Terms and Conditions</a>.  Icons from <a href="http://glyphicons.com/">glyphicons.com</a></p>

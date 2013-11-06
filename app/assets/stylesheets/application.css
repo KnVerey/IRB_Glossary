@@ -70,10 +70,9 @@ main {
 	text-align: center;
 }
 
-.welcome {
-	padding-top: 35%;
+header {
+	z-index: 9;
 }
-
 
 
 /*VISUALS*/
