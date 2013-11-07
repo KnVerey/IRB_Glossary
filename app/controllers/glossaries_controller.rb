@@ -14,17 +14,14 @@ class GlossariesController < ApplicationController
 	def search
 		@glossary = Glossary.find(params[:id])
 		@term_records = []
+		
 		@l1 = params[:l1]
 		@l1 == "french" ? @l2 = "english" : @l2 = "french"
 		
 		@query = params[:search]
-		@glossary.term_records.all.each do |record|
-			if @l1 == "english"
-				(@term_records << record) if record.english.downcase.include? (@query.downcase)
-			else
-				(@term_records << record) if record.french.downcase.include? (@query.downcase)
-			end
-		end
+
+		@term_records = @glossary.term_records.where("#{@l1} LIKE ?", "%#{@query}%")
+
 	end
 
 end
