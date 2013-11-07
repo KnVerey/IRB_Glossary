@@ -1,3 +1,5 @@
  ☐ Make first set appear on load
  ☐ add helper method to take off accents
- ☐ extract more logic from show.html.erb
+ ☐ extract more logic from show view
+ ☐ refactor to make show and serach views less redundant
+ ☐ display number of search results (esp if none)

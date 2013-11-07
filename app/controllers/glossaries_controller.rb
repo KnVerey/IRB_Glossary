@@ -19,7 +19,11 @@ class GlossariesController < ApplicationController
 		
 		@query = params[:search]
 		@glossary.term_records.all.each do |record|
-			(@term_records << record) if record.english.include? (@query)
+			if @l1 == "english"
+				(@term_records << record) if record.english.downcase.include? (@query.downcase)
+			else
+				(@term_records << record) if record.french.downcase.include? (@query.downcase)
+			end
 		end
 	end
 
