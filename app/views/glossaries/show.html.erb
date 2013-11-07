@@ -1,17 +1,3 @@
-<script> 
-	function show(id) { 
-		document.getElementById(id).style.display = 'block'; 
-	}
-
-	function hideAll() { 
-		var items = document.getElementsByClassName("term-list");
-		for (var i in items) { 
-			if (items[i].id != null) items[i].style.display = 'none';
-		}
-	}
-
-</script> 
-
 <header class="h-full container darkest-bg">
 	<h3 class="left accent"><%= @glossary.description %>: <%= @l1.capitalize %> <%= link_to button_tag(" ↔ "), "/glossaries/1?l1=#{@l2}" %> <%= @l2.capitalize %></h3>
 	<%= form_tag("/search", method: :get) do %>

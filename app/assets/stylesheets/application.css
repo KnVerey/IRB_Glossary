@@ -42,7 +42,7 @@ header {
 	min-height: 3em;
 	z-index: 100;
 	position: fixed;
-	padding: 1em 1em 1em 0;
+	padding: 1em;
 	box-sizing:border-box;
 }
 
@@ -82,7 +82,7 @@ main {
 	text-align: center;
 }
 
-header {
+header, footer {
 	z-index: 9;
 }
 
@@ -99,7 +99,7 @@ header {
 }
 
 .med-bg {
-	background-color: rgba(164,164,164,1);	
+	background-color: rgba(230,230,230,1);	
 }
 
 .light-bg {

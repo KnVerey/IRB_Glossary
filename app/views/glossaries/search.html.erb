@@ -1,5 +1,5 @@
 <header class="h-full container darkest-bg">
-	<h3 class="left accent"><%= @glossary.description %>: Search results</h3>
+	<h3 class="left accent"><%= @glossary.description %>: Search results (<%= @l1.capitalize %>)</h3>
 	<%= form_tag("/search", method: :get) do %>
 		<%= search_field_tag "search", nil, placeholder: "Enter an #{@l1.capitalize} search term" %>
 		<%= hidden_field_tag "l1", "#{@l1}" %>
@@ -11,7 +11,7 @@
 <main class="h-full container med-bg">
 
 	<section id="<%= @query %>" class="results-list">
-		<h3>Results: <%= @query %></h3>
+		<h3><%= @query %>: <%= @term_records.length %> results</h3>
 		<ol class="terms">
 			<% @term_records.each do |record| %>
 				<% if @l1 == "english" %>

@@ -1,5 +1,14 @@
- ☐ Make first set appear on load
  ☐ add helper method to take off accents
  ☐ extract more logic from show view
  ☐ refactor to make show and serach views less redundant
- ☐ display number of search results (esp if none)
+ ☐ add link to title
+ ☐ make back to alpha display more prominent
+ ☐ heroku
+ ☐ favicon
+ ☐ switch records display to two-column layout
+ ☐ sanitize search input
+
+＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+Archive:
+ ✔ fix padding on side of title @done (13-11-07 10:05)
+ ✔ display number of search results (esp if none) @done (13-11-07 01:40)
