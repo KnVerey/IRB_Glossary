@@ -1,0 +1,49 @@
+<script> 
+	function show(id) { 
+		document.getElementById(id).style.display = 'block'; 
+	}
+
+	function hideAll() { 
+		var items = document.getElementsByClassName("term-list");
+		for (var i in items) { 
+			if (items[i].id != null) items[i].style.display = 'none';
+		}
+	}
+
+</script> 
+
+<header class="h-full container darkest-bg">
+	<h3 class="left accent"><%= @glossary.description %>: Search results</h3>
+	<%= form_tag("/search", method: :get) do %>
+		<%= search_field_tag "search", nil, placeholder: "Enter an #{@l1.capitalize} search term" %>
+		<%= hidden_field_tag "l1", "#{@l1}" %>
+		<%= hidden_field_tag "id", "#{@glossary.id}"%>
+		<%= submit_tag "GO" %>
+	<% end %>
+</header>
+
+<main class="h-full container med-bg">
+
+	<section id="<%= @query %>" class="results-list">
+		<h3>Results: <%= @query %></h3>
+		<ol class="terms">
+			<% @term_records.each do |record| %>
+				<% if @l1 == "english" %>
+					<li class="source-term"><%= record.english %></li>
+					<li class="translation"><%= record.french %></li>
+				<% elsif @l1 == "french" %> 
+					<li class="source-term"><%= record.french %></li>
+					<li class="translation"><%= record.english %></li>
+				<% end %>
+			<% end %>
+		</ol>
+	</section>
+
+	<nav class="chapter-nav med-bg">
+	  <%= link_to button_tag(" Back to alphabetical listing "), "/glossaries/1?l1=#{@l1}" %>
+	</nav>
+</main>
+
+<footer class="darkest-bg h-full">
+	<p>Information reproduced from <a href="http://www.irb-cisr.gc.ca" >www.irb-cisr.gc.ca</a> for non-commercial purposes in accordance with that site's <a href="http://www.irb-cisr.gc.ca/Eng/notavi/Pages/index.aspx">Terms and Conditions</a>.  Icons from <a href="http://glyphicons.com/">glyphicons.com</a></p>
+</footer>

@@ -1,7 +1,6 @@
 class GlossariesController < ApplicationController
 
 	def index
-		@glossaries = Glossary.all
 	end
 
 	def show
@@ -13,7 +12,15 @@ class GlossariesController < ApplicationController
 	end
 
 	def search
+		@glossary = Glossary.find(params[:id])
+		@term_records = []
+		@l1 = params[:l1]
+		@l1 == "french" ? @l2 = "english" : @l2 = "french"
 		
+		@query = params[:search]
+		@glossary.term_records.all.each do |record|
+			(@term_records << record) if record.english.include? (@query)
+		end
 	end
 
 end
