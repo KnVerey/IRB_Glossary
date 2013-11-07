@@ -10,21 +10,37 @@
 
 <main class="h-full container med-bg">
 
-	<% @chapter_list[1..-1].each do |letter| %>
+	<% chapter_list(@glossary, @l1).each do |letter| %>
 			<section id="<%= letter %>" class="term-list">
 				<h3> <%= letter %> </h3>
 				<ol class="terms">
-					<% in_chapter = @glossary.term_records.where("#{@l1} LIKE #{letter}%").select("#{@l1} as l1, #{@l2} as l2") %>
-					<% in_chapter.each do |record| %>
-						<li class="source_term"><%= record.(@l1) %></li>
-						<li class="translation"><%= record.(@l2) %></li>
+					<% @term_records.each do |record| %>
+					
+						<% if @l1 == "english" %>
+							<% source_term = record.english %>
+							<% translation = record.french %>
+						<% elsif @l1 == "french" %> 
+							<% source_term = record.french %>
+							<% translation = record.english %>
+						<% end %>
+
+						<% term_char1 = source_term[0] %>
+						<% if letter == "#" %>
+							<% if %w[1 2 3 4 5 6 7 8 9 0].include?(term_char1) %>
+								<li class="source-term"><%= source_term %></li>
+								<li class="translation"><%= translation %></li>
+							<% end %>
+						<% elsif remove_accents(term_char1.upcase) == remove_accents(letter.upcase) %> 
+							<li class="source-term"><%= source_term %></li>
+							<li class="translation"><%= translation %></li>
+						<% end %>
 					<% end %>
 				</ol>
 			</section>
 		<% end %>
 
 	<nav class="chapter-nav med-bg">
-	  <% @chapter_list.each do |letter| %>
+	  <% chapter_list(@glossary, @l1).each do |letter| %>
 	  	<a href="#<%= letter %>" onclick="hideAll(); show('<%= letter %>');"><%= letter %></a>
 	  <% end %>
 	</nav>
