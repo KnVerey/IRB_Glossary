@@ -11,21 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131106182419) do
+ActiveRecord::Schema.define(version: 20131105190936) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "glossaries", force: true do |t|
-    t.string   "description"
-    t.string   "source"
+    t.text     "description"
+    t.text     "source"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "term_records", force: true do |t|
-    t.string   "english"
-    t.string   "french"
+    t.text     "english"
+    t.text     "french"
+    t.integer  "glossary_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "glossary_id"
   end
 
 end

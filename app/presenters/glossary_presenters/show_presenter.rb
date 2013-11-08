@@ -28,8 +28,6 @@ module GlossaryPresenters
 				new_record_hash = {}
 
 				sorted_record_keys = record_hash.keys.sort_by { |key| remove_accents(key).downcase }
-				puts sorted_record_keys.to_s
-
 				sorted_record_keys.each do |source_term|
 					new_record_hash = new_record_hash.merge( { source_term => record_hash[source_term] } )
 				end
