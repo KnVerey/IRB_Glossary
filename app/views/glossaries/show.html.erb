@@ -5,17 +5,21 @@
 			<h3> <%= letter %> </h3>
 			<ol class="terms">
 				<% term_records.each do |source_term, translation| %>
-					<li class="source-term"><%= source_term %></li>
-					<li class="translation"><%= translation %></li>
+					<div class = "record container">
+						<li class="source-term"><%= source_term %></li>
+						<li class="translation"><%= translation %></li>
+					</div>
 				<% end %>
 			</ol>
 		</section>
 	<% end %>
 
 	<nav class="chapter-nav med-bg">
-	  <% @presenter.data.each_key do |letter| %>
-	  	<a href="#<%= letter %>" onclick="hideAll(); show('<%= letter %>');"><%= letter %></a>
-	  <% end %>
+		<div class="chapter-nav-wrapper">
+		  <% @presenter.data.each_key do |letter| %>
+		  	<a href="#<%= letter %>" onclick="hideAll(); show('<%= letter %>');"><%= letter %></a>
+		  <% end %>
+		</div>
 	</nav>
 
 <%= render "footer" %>

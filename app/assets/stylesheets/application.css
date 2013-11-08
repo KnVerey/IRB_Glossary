@@ -15,7 +15,6 @@
 /*POSITIONING*/
 
 .container {
-	/*position:relative;*/
 	display:block;
 }
 
@@ -150,12 +149,22 @@ main {
 	padding:0 1em;
 }
 
+.source-term, .translation {
+	width: 50%;
+	margin-bottom: 1em;
+	padding: 0 1em;
+	box-sizing:border-box;
+}
+
 .source-term {
 	font-weight: bold;
+	float: left;
+	text-align: right;
 }
 
 .translation {
-	margin-bottom: 1em;
+	float: right;
+	text-align: left;
 }
 
 /*VISUALS*/
@@ -210,18 +219,18 @@ a:active {
 	color:rgba(130,193,245,0.5);	
 }
 
+.chapter-nav-wrapper {
+	background-color: rgb(31,31,31);
+	border-radius: 5px;
+	padding: 2px 0;
+}
+
+.chapter-nav-wrapper button {
+	margin: 5px 0;
+}
+
 .chapter-nav a {
 	font-weight: bolder;
-	color:black;
-}
-
-.chapter-nav button {
-	background-color: rgba(245,77,49,0.8);
-	color: black;
-}
-
-.chapter-nav button:hover {
-	background-color: rgba(245,77,49,0.9);
 }
 
 input, button {

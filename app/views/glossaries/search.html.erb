@@ -4,14 +4,18 @@
 		<h3><%= @presenter.data.values.length %> search results for <br>"<%= @query %>"</h3>
 		<ol class="terms">
 			<% @presenter.data.each do |source_term, translation| %>
+				<div class = "record container">
 					<li class="source-term"><%= source_term %></li>
 					<li class="translation"><%= translation %></li>
+				</div>
 			<% end %>
 		</ol>
 	</section>
 
 	<nav class="chapter-nav med-bg">
-	  <%= link_to button_tag(" Back to alphabetical listing "), "/glossaries/1?l1=#{@l1}" %>
+		<div class="chapter-nav-wrapper">
+		  <%= link_to button_tag(" Back to alphabetical listing "), "/glossaries/1?l1=#{@l1}" %>
+	  </div>
 	</nav>
 
 <%= render "footer" %>

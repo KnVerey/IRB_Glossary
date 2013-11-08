@@ -1,9 +1,9 @@
  ☐ heroku
- ☐ switch records display to two-column layout
  ☐ ask about string interpolation in presenter select queries
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ switch records display to two-column layout @done (13-11-08 12:08)
  ✔ figure out better place for remove_accents @done (13-11-08 11:28)
  ✔ favicon @done (13-11-08 11:26)
  ✔ deeper/manual display sort to ignore accents and caps (see bottom of FR "A" listing or FR search for "protection") @done (13-11-08 11:09)
