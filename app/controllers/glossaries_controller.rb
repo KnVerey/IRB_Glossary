@@ -1,5 +1,7 @@
 class GlossariesController < ApplicationController
 
+	before_filter :load_language, :only => [:show, :search]
+
 	def index
 	end
 
@@ -18,4 +20,9 @@ class GlossariesController < ApplicationController
 		@presenter = GlossaryPresenters::SearchPresenter.new(@glossary, @l1, @l2, @query)
 	end
 
+	private
+
+	def load_language
+		redirect_to glossaries_path unless params[:l1] == 'french' || params[:l1] == 'english'
+	end
 end
