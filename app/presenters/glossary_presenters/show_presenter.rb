@@ -1,6 +1,8 @@
 module GlossaryPresenters
 
 	class ShowPresenter
+		
+		include PresenterUtilities
 		attr_reader :data
 
 		def initialize(glossary, l1, l2)
@@ -17,10 +19,6 @@ module GlossaryPresenters
 			end
 
 			sort_data!
-		end
-
-		def remove_accents(string)
-			string.tr('ÀàÂâÄäÉéÈèÊêËëÎîÏïÔôÖöÛûÜüÙùÇç','aaaaaaeeeeeeeeiiiioooouuuuuucc')
 		end
 
 		def sort_data!

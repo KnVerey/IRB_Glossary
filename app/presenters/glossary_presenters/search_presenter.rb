@@ -2,6 +2,7 @@ module GlossaryPresenters
 
 	class SearchPresenter
 		attr_reader :data
+		include PresenterUtilities
 
 		def initialize(glossary, l1, l2, query)
 			@data = Hash.new
@@ -21,10 +22,6 @@ module GlossaryPresenters
 				new_record_hash = new_record_hash.merge( { source_term => @data[source_term] } )
 			end
 			@data = new_record_hash
-		end
-
-		def remove_accents(string)
-			string.tr('ÀàÂâÄäÉéÈèÊêËëÎîÏïÔôÖöÛûÜüÙùÇç','aaaaaaeeeeeeeeiiiioooouuuuuucc')
 		end
 
 	end

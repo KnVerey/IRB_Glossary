@@ -1,10 +1,12 @@
  ☐ heroku
- ☐ favicon
  ☐ switch records display to two-column layout
- ☐ deeper/manual display sort to ignore accents and caps (see bottom of FR "A" listing or FR search for "protection")
+ ☐ ask about string interpolation in presenter select queries
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ figure out better place for remove_accents @done (13-11-08 11:28)
+ ✔ favicon @done (13-11-08 11:26)
+ ✔ deeper/manual display sort to ignore accents and caps (see bottom of FR "A" listing or FR search for "protection") @done (13-11-08 11:09)
  ✔ make back to alpha display more prominent @done (13-11-08 01:32)
  ✔ add link to title @done (13-11-08 00:48)
  ✔ refactor to make show and serach views less redundant @done (13-11-08 00:45)
