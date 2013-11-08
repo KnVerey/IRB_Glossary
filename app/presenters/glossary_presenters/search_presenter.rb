@@ -14,17 +14,17 @@ module GlossaryPresenters
 		end
 
 		def sort_data!
-			@data.each do |source_term, translation|
-				sorted_record_keys = []
-				new_record_hash = {}
+			sorted_record_keys = @data.keys.sort_by { |source_term| remove_accents(source_term).downcase }
+			new_record_hash = {}
 
-				sorted_record_keys = record_hash.keys.sort_by { |key| remove_accents(key).downcase }
-				sorted_record_keys.each do |source_term|
-					new_record_hash = new_record_hash.merge( { source_term => record_hash[source_term] } )
-				end
-				@data[letter] = new_record_hash
+			sorted_record_keys.each do |source_term|
+				new_record_hash = new_record_hash.merge( { source_term => @data[source_term] } )
 			end
-			@data = Hash[@data.sort]
+			@data = new_record_hash
+		end
+
+		def remove_accents(string)
+			string.tr('ÀàÂâÄäÉéÈèÊêËëÎîÏïÔôÖöÛûÜüÙùÇç','aaaaaaeeeeeeeeiiiioooouuuuuucc')
 		end
 
 	end
