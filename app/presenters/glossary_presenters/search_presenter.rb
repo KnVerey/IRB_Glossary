@@ -10,8 +10,11 @@ module GlossaryPresenters
  					data[record.source] = record.translation
 			end
 
+			sort_data!
+		end
+
+		def sort_data!
 			@data = Hash[@data.sort]
-			puts @data
 		end
 
 	end

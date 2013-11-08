@@ -1,14 +1,4 @@
-<header class="h-full container darkest-bg">
-	<h3 class="left accent"><%= @glossary.description %>: <%= @l1.capitalize %> <%= link_to button_tag(" ↔ "), "/glossaries/1?l1=#{@l2}" %> <%= @l2.capitalize %></h3>
-	<%= form_tag("/search", method: :get) do %>
-		<%= search_field_tag "search", nil, placeholder: "Enter an #{@l1.capitalize} search term" %>
-		<%= hidden_field_tag "l1", "#{@l1}" %>
-		<%= hidden_field_tag "id", "#{@glossary.id}"%>
-		<%= submit_tag "GO" %>
-	<% end %>
-</header>
-
-<main class="h-full container med-bg">
+<%= render "header" -%>
 
 	<% @presenter.data.each do |letter, term_records| %>
 		<section id="<%= letter %>" class="term-list">
@@ -27,8 +17,5 @@
 	  	<a href="#<%= letter %>" onclick="hideAll(); show('<%= letter %>');"><%= letter %></a>
 	  <% end %>
 	</nav>
-</main>
 
-<footer class="darkest-bg h-full">
-	<p>Information reproduced from <a href="http://www.irb-cisr.gc.ca" >www.irb-cisr.gc.ca</a> for non-commercial purposes in accordance with that site's <a href="http://www.irb-cisr.gc.ca/Eng/notavi/Pages/index.aspx">Terms and Conditions</a>.</p>
-</footer>
+<%= render "footer" %>

@@ -1,0 +1,11 @@
+<header class="h-full container darkest-bg">
+	<h3 class="left"><%= link_to ("#{@glossary.description}:"), "/"%>  <%= @l1.capitalize %> <%= link_to button_tag(" ↔ "), "/glossaries/1?l1=#{@l2}" %> <%= @l2.capitalize %></h3>
+	<%= form_tag("/search", method: :get) do %>
+		<%= search_field_tag "search", nil, placeholder: "Enter #{@l1.capitalize} search term" %>
+		<%= hidden_field_tag "l1", "#{@l1}" %>
+		<%= hidden_field_tag "id", "#{@glossary.id}"%>
+		<%= submit_tag "GO" %>
+	<% end %>
+</header>
+
+<main class="h-full container med-bg">
