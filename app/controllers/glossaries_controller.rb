@@ -4,10 +4,12 @@ class GlossariesController < ApplicationController
 	end
 
 	def show
-		@glossary = Glossary.find(params[:id])
-		@term_records = @glossary.term_records.order("? ASC", params[:l1])
+
 		@l1 = params[:l1]
 		@l1 == "french" ? @l2 = "english" : @l2 = "french"
+		@glossary = Glossary.find(params[:id])
+		@presenter = GlossaryPresenters::ShowPresenter.new(@glossary, @l1, @l2)
+
 	end
 
 	def search
