@@ -15,7 +15,7 @@ class GlossariesController < ApplicationController
 		@l1 == "french" ? @l2 = "english" : @l2 = "french"
 		@query = params[:search]
 		@glossary = Glossary.find(params[:id])
-		@term_records = @glossary.term_records.where("#{@l1} LIKE ?", "%#{@query}%")
+		@presenter = GlossaryPresenters::SearchPresenter.new(@glossary, @l1, @l2, @query)
 	end
 
 end

@@ -11,16 +11,11 @@
 <main class="h-full container med-bg">
 
 	<section id="<%= @query %>" class="results-list">
-		<h3><%= @query %>: <%= @term_records.length %> results</h3>
+		<h3><%= @query %>: <%= @presenter.data.values.length %> results</h3>
 		<ol class="terms">
-			<% @term_records.each do |record| %>
-				<% if @l1 == "english" %>
-					<li class="source-term"><%= record.english %></li>
-					<li class="translation"><%= record.french %></li>
-				<% elsif @l1 == "french" %> 
-					<li class="source-term"><%= record.french %></li>
-					<li class="translation"><%= record.english %></li>
-				<% end %>
+			<% @presenter.data.each do |source_term, translation| %>
+					<li class="source-term"><%= source_term %></li>
+					<li class="translation"><%= translation %></li>
 			<% end %>
 		</ol>
 	</section>

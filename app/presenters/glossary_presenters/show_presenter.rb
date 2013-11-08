@@ -16,11 +16,15 @@ module GlossaryPresenters
  				end
 			end
 
-			@data = Hash[@data.sort]
+			sort_data!
 		end
 
 		def remove_accents(string)
 			string.tr('ÀàÂâÄäÉéÈèÊêËëÎîÏïÔôÖöÛûÜüÙùÇç','aaaaaaeeeeeeeeiiiioooouuuuuucc')
+		end
+
+		def sort_data!
+			@data = Hash[(@data.each {|k,v| @data[k] = Hash[v.sort]}).sort]
 		end
 
 	end
