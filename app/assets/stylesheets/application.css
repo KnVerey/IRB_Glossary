@@ -171,19 +171,19 @@ main {
 
 .darkest-bg {
 	background-color: rgb(31,31,31);
-	color:rgba(255,255,255,0.8);
+	color:rgb(220,220,220);
 }
 
 .dark-bg {
-	background-color: rgba(135,135,135,1);
+	background-color: rgb(135,135,135);
 }
 
 .med-bg {
-	background-color: rgba(230,230,230,1);	
+	background-color: rgb(230,230,230);	
 }
 
 .light-bg {
-	background-color: rgba(175,175,175,1);		
+	background-color: rgb(175,175,175);		
 }
 
 .styling-bar.abs_left {
@@ -207,16 +207,12 @@ h3 a {
 }
 
 a {
-	color:rgba(130,193,245,0.9);	
+	color:rgb(130,193,245);	
 	text-decoration: none;
 }
 
-a:hover, a:focus {
-	color:rgba(130,193,245,0.7);	
-}
-
-a:active {
-	color:rgba(130,193,245,0.5);	
+a:hover, a:focus, a:active {
+	color:rgb(110,170,200);	
 }
 
 .chapter-nav-wrapper {
@@ -245,7 +241,7 @@ button, input[type="submit"] {
 
 input[type="submit"]:active, input[type="submit"]:focus, input[type="submit"]:hover, button:focus, button:active, button:hover {
 	outline:none;
-	background-color: rgba(130,193,245,0.5);	
+	background-color: rgb(130,193,245);
 }
 
 input[type="search"] {
