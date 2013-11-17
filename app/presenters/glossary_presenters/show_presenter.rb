@@ -8,7 +8,7 @@ module GlossaryPresenters
 		def initialize(glossary, l1, l2)
 			@data = Hash.new({})
 
-			glossary.term_records.select("#{l1} as source, #{l2} as translation").order("unaccent(#{l1}) ASC").each do |record|
+			glossary.term_records.select("#{l1} as source, #{l2} as translation").order("lower(unaccent(#{l1})) ASC").each do |record|
  				first_letter = remove_accents(record.source[0]).upcase
 
 				if first_letter[/\d/]
