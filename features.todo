@@ -1,8 +1,9 @@
- ☐ heroku
- ☐ ask about string interpolation in presenter select queries
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 Archive:
+ ✔ look into using locales instead of manual sorting @done (13-11-16 19:29)
+ ✔ heroku @done (13-11-10 21:35)
+ ✔ ask about string interpolation in presenter select queries @done (13-11-10 21:35)
  ✔ switch records display to two-column layout @done (13-11-08 12:08)
  ✔ figure out better place for remove_accents @done (13-11-08 11:28)
  ✔ favicon @done (13-11-08 11:26)

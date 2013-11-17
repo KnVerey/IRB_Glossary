@@ -2,7 +2,6 @@ module GlossaryPresenters
 
 	class SearchPresenter
 		attr_reader :data
-		include PresenterUtilities
 
 		def initialize(glossary, l1, l2, query)
 			@data = Hash.new
