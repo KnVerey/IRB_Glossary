@@ -1,5 +1,6 @@
-IRB Glossary
-====================
+<b>IRB Glossary</b>
+------------------
+
 This is a reformatted version of the Immigration and Refugee Board's glossary, a tool IRB editors use every day.
 The online version of the original can be found at http://www.irb-cisr.gc.ca/Eng/BoaCom/pubs/Pages/GloLexAk.aspx.
 My reformat of the scraped data makes the glossary searchable and easier to consult.
