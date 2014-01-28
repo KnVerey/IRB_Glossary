@@ -1,4 +1,4 @@
-module PresenterUtilities
+module GlossaryPresenters::PresenterUtilities
 
 	def remove_accents(string)
 		string.tr('ÀàÂâÄäÉéÈèÊêËëÎîÏïÔôÖöÛûÜüÙùÇç','aaaaaaeeeeeeeeiiiioooouuuuuucc')
